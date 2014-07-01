@@ -1,0 +1,14 @@
+c:\users\patricioandres\documents\visual studio 2010\Projects\ventasProducto\ventasProducto\bin\Debug\ventasProducto.exe
+c:\users\patricioandres\documents\visual studio 2010\Projects\ventasProducto\ventasProducto\bin\Debug\ventasProducto.pdb
+c:\users\patricioandres\documents\visual studio 2010\Projects\ventasProducto\ventasProducto\obj\x86\Debug\ventasProducto.VentanaPrincipal.resources
+c:\users\patricioandres\documents\visual studio 2010\Projects\ventasProducto\ventasProducto\obj\x86\Debug\ventasProducto.Properties.Resources.resources
+c:\users\patricioandres\documents\visual studio 2010\Projects\ventasProducto\ventasProducto\obj\x86\Debug\ventasProducto.csproj.GenerateResource.Cache
+c:\users\patricioandres\documents\visual studio 2010\Projects\ventasProducto\ventasProducto\obj\x86\Debug\ventasProducto.exe
+c:\users\patricioandres\documents\visual studio 2010\Projects\ventasProducto\ventasProducto\obj\x86\Debug\ventasProducto.pdb
+c:\users\patricioandres\documents\visual studio 2010\Projects\ventasProducto\ventasProducto\obj\x86\Debug\ventasProducto.Presentacion.Ventana_Cliente.resources
+c:\users\patricioandres\documents\visual studio 2010\Projects\ventasProducto\ventasProducto\obj\x86\Debug\ventasProducto.Presentacion.Ventana_Producto.resources
+C:\Users\patricioandres\Documents\Visual Studio 2010\Projects\ventasProducto\ventasProducto\bin\Debug\ventasProducto.exe.config
+C:\Users\patricioandres\Documents\Visual Studio 2010\Projects\ventasProducto\ventasProducto\obj\x86\Debug\ventasProducto.Presentacion.Ventana_Venta.resources
+C:\Users\patricioandres\Documents\Visual Studio 2010\Projects\ventasProducto\ventasProducto\obj\x86\Debug\ventasProducto.csprojResolveAssemblyReference.cache
+C:\Users\patricioandres\Documents\Visual Studio 2010\Projects\ventasProducto\ventasProducto\obj\x86\Debug\ventasProducto.Presentacion.acerca.resources
+C:\Users\patricioandres\Documents\Visual Studio 2010\Projects\ventasProducto\ventasProducto\bin\Debug\Productos.sdf
