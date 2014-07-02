@@ -32,10 +32,17 @@ namespace ventasProducto.Presentacion
         public Ventana_Producto()
         {
             InitializeComponent();
+            this.grid_producto.ReadOnly = true;
+           
         }
 
         private void Ventana_Producto_Load(object sender, EventArgs e)
         {
+
+            // TODO: esta línea de código carga datos en la tabla Producto'
+            //Puede moverla o quitarla según sea necesario.
+
+            this.productoAdapter.Fill(this.producto_diagram.producto);
 
         }
     }

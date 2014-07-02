@@ -8,12 +8,12 @@ namespace ventasProducto
     class Cliente
     {
     // atributos  de la tabla cliente
-        private int     _id_cliente;
+        private int    _id_cliente;
         private string _nombres;
         private string _paterno;
         private string _materno;
         private string _direccion;
-        private int _fono;
+        private int    _fono;
         private string _email;
 
       

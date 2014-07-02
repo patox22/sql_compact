@@ -11,4 +11,3 @@ C:\Users\patricioandres\Documents\Visual Studio 2010\Projects\ventasProducto\ven
 C:\Users\patricioandres\Documents\Visual Studio 2010\Projects\ventasProducto\ventasProducto\obj\x86\Debug\ventasProducto.Presentacion.Ventana_Venta.resources
 C:\Users\patricioandres\Documents\Visual Studio 2010\Projects\ventasProducto\ventasProducto\obj\x86\Debug\ventasProducto.csprojResolveAssemblyReference.cache
 C:\Users\patricioandres\Documents\Visual Studio 2010\Projects\ventasProducto\ventasProducto\obj\x86\Debug\ventasProducto.Presentacion.acerca.resources
-C:\Users\patricioandres\Documents\Visual Studio 2010\Projects\ventasProducto\ventasProducto\bin\Debug\Productos.sdf

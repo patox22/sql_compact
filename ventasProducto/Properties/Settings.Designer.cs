@@ -32,5 +32,15 @@ namespace ventasProducto.Properties {
                 return ((string)(this["ProductosConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=C:\\Users\\patricioandres\\Documents\\Productos.sdf")]
+        public string ProductosConexion {
+            get {
+                return ((string)(this["ProductosConexion"]));
+            }
+        }
     }
 }

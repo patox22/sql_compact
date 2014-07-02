@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -44,8 +45,24 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.grid_producto = new System.Windows.Forms.DataGridView();
+            this.productodiagramBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.producto_diagram = new ventasProducto.Producto_diagram();
+            this.productoAdapter = new ventasProducto.Producto_diagramTableAdapters.productoTableAdapter();
+            this.productoManager = new ventasProducto.Producto_diagramTableAdapters.TableAdapterManager();
+            this.productoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.idproductoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stockDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pcostoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.utilidadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grid_producto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productodiagramBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.producto_diagram)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -201,11 +218,103 @@
             this.button1.Text = "Guardar";
             this.button1.UseVisualStyleBackColor = true;
             // 
+            // grid_producto
+            // 
+            this.grid_producto.AllowUserToAddRows = false;
+            this.grid_producto.AllowUserToDeleteRows = false;
+            this.grid_producto.AllowUserToOrderColumns = true;
+            this.grid_producto.AutoGenerateColumns = false;
+            this.grid_producto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grid_producto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idproductoDataGridViewTextBoxColumn,
+            this.nombreDataGridViewTextBoxColumn,
+            this.descripcionDataGridViewTextBoxColumn,
+            this.stockDataGridViewTextBoxColumn,
+            this.pcostoDataGridViewTextBoxColumn,
+            this.utilidadDataGridViewTextBoxColumn});
+            this.grid_producto.DataSource = this.productoBindingSource;
+            this.grid_producto.Location = new System.Drawing.Point(69, 176);
+            this.grid_producto.Name = "grid_producto";
+            this.grid_producto.ReadOnly = true;
+            this.grid_producto.Size = new System.Drawing.Size(642, 160);
+            this.grid_producto.TabIndex = 3;
+            // 
+            // productodiagramBindingSource
+            // 
+            this.productodiagramBindingSource.DataSource = this.producto_diagram;
+            this.productodiagramBindingSource.Position = 0;
+            // 
+            // producto_diagram
+            // 
+            this.producto_diagram.DataSetName = "Producto_diagram";
+            this.producto_diagram.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // productoAdapter
+            // 
+            this.productoAdapter.ClearBeforeFill = true;
+            // 
+            // productoManager
+            // 
+            this.productoManager.BackupDataSetBeforeUpdate = false;
+            this.productoManager.clienteTableAdapter = null;
+            this.productoManager.detalleTableAdapter = null;
+            this.productoManager.productoTableAdapter = this.productoAdapter;
+            this.productoManager.UpdateOrder = ventasProducto.Producto_diagramTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.productoManager.ventaTableAdapter = null;
+            // 
+            // productoBindingSource
+            // 
+            this.productoBindingSource.DataMember = "producto";
+            this.productoBindingSource.DataSource = this.productodiagramBindingSource;
+            // 
+            // idproductoDataGridViewTextBoxColumn
+            // 
+            this.idproductoDataGridViewTextBoxColumn.DataPropertyName = "id_producto";
+            this.idproductoDataGridViewTextBoxColumn.HeaderText = "id_producto";
+            this.idproductoDataGridViewTextBoxColumn.Name = "idproductoDataGridViewTextBoxColumn";
+            this.idproductoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nombreDataGridViewTextBoxColumn
+            // 
+            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "nombre";
+            this.nombreDataGridViewTextBoxColumn.HeaderText = "nombre";
+            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // descripcionDataGridViewTextBoxColumn
+            // 
+            this.descripcionDataGridViewTextBoxColumn.DataPropertyName = "descripcion";
+            this.descripcionDataGridViewTextBoxColumn.HeaderText = "descripcion";
+            this.descripcionDataGridViewTextBoxColumn.Name = "descripcionDataGridViewTextBoxColumn";
+            this.descripcionDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // stockDataGridViewTextBoxColumn
+            // 
+            this.stockDataGridViewTextBoxColumn.DataPropertyName = "stock";
+            this.stockDataGridViewTextBoxColumn.HeaderText = "stock";
+            this.stockDataGridViewTextBoxColumn.Name = "stockDataGridViewTextBoxColumn";
+            this.stockDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // pcostoDataGridViewTextBoxColumn
+            // 
+            this.pcostoDataGridViewTextBoxColumn.DataPropertyName = "pcosto";
+            this.pcostoDataGridViewTextBoxColumn.HeaderText = "pcosto";
+            this.pcostoDataGridViewTextBoxColumn.Name = "pcostoDataGridViewTextBoxColumn";
+            this.pcostoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // utilidadDataGridViewTextBoxColumn
+            // 
+            this.utilidadDataGridViewTextBoxColumn.DataPropertyName = "utilidad";
+            this.utilidadDataGridViewTextBoxColumn.HeaderText = "utilidad";
+            this.utilidadDataGridViewTextBoxColumn.Name = "utilidadDataGridViewTextBoxColumn";
+            this.utilidadDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // Ventana_Producto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(918, 339);
+            this.ClientSize = new System.Drawing.Size(918, 367);
+            this.Controls.Add(this.grid_producto);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "Ventana_Producto";
@@ -214,6 +323,10 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.grid_producto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productodiagramBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.producto_diagram)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productoBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -236,5 +349,18 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridView grid_producto;
+        private System.Windows.Forms.BindingSource productodiagramBindingSource;
+        private Producto_diagram producto_diagram;
+        private Producto_diagramTableAdapters.productoTableAdapter productoAdapter;
+        private Producto_diagramTableAdapters.TableAdapterManager productoManager;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idproductoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descripcionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn stockDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pcostoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn utilidadDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource productoBindingSource;
+  
     }
 }
