@@ -135,6 +135,7 @@
     <None Include="app.config" />
     <None Include="Producto_diagram.xsc">
       <DependentUpon>Producto_diagram.xsd</DependentUpon>
+      <SubType>Designer</SubType>
     </None>
     <None Include="Producto_diagram.xsd">
       <SubType>Designer</SubType>

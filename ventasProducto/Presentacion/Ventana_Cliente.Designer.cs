@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.groupDatos = new System.Windows.Forms.GroupBox();
             this.combo_id = new System.Windows.Forms.ComboBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -46,8 +47,23 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.ventaTableAdapter = new ventasProducto.Producto_diagramTableAdapters.ventaTableAdapter();
+            this.datagrid_producto = new System.Windows.Forms.DataGridView();
+            this.producto_diagram = new ventasProducto.Producto_diagram();
+            this.clienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.clienteTableAdapter = new ventasProducto.Producto_diagramTableAdapters.clienteTableAdapter();
+            this.idclienteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombresDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.paternoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.maternoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.direccionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fonoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupDatos.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.datagrid_producto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.producto_diagram)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // groupDatos
@@ -68,7 +84,7 @@
             this.groupDatos.Controls.Add(this.label1);
             this.groupDatos.Location = new System.Drawing.Point(37, 12);
             this.groupDatos.Name = "groupDatos";
-            this.groupDatos.Size = new System.Drawing.Size(603, 286);
+            this.groupDatos.Size = new System.Drawing.Size(603, 171);
             this.groupDatos.TabIndex = 0;
             this.groupDatos.TabStop = false;
             this.groupDatos.Text = "Datos";
@@ -76,15 +92,19 @@
             // combo_id
             // 
             this.combo_id.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.combo_id.DataSource = this.clienteBindingSource;
+            this.combo_id.DisplayMember = "id_cliente";
             this.combo_id.FormattingEnabled = true;
             this.combo_id.Location = new System.Drawing.Point(31, 37);
             this.combo_id.Name = "combo_id";
             this.combo_id.Size = new System.Drawing.Size(76, 21);
             this.combo_id.TabIndex = 14;
+            this.combo_id.ValueMember = "id_cliente";
             // 
             // textBox1
             // 
             this.textBox1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.textBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clienteBindingSource, "email", true));
             this.textBox1.Location = new System.Drawing.Point(74, 110);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(168, 20);
@@ -102,6 +122,7 @@
             // txt_telefono
             // 
             this.txt_telefono.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.txt_telefono.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clienteBindingSource, "fono", true));
             this.txt_telefono.Location = new System.Drawing.Point(306, 79);
             this.txt_telefono.Name = "txt_telefono";
             this.txt_telefono.Size = new System.Drawing.Size(168, 20);
@@ -119,6 +140,7 @@
             // txt_direccion
             // 
             this.txt_direccion.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.txt_direccion.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clienteBindingSource, "direccion", true));
             this.txt_direccion.Location = new System.Drawing.Point(74, 79);
             this.txt_direccion.Name = "txt_direccion";
             this.txt_direccion.Size = new System.Drawing.Size(168, 20);
@@ -136,6 +158,7 @@
             // txt_materno
             // 
             this.txt_materno.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.txt_materno.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clienteBindingSource, "materno", true));
             this.txt_materno.Location = new System.Drawing.Point(496, 35);
             this.txt_materno.Name = "txt_materno";
             this.txt_materno.Size = new System.Drawing.Size(100, 20);
@@ -153,6 +176,7 @@
             // txt_paterno
             // 
             this.txt_paterno.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.txt_paterno.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clienteBindingSource, "paterno", true));
             this.txt_paterno.Location = new System.Drawing.Point(334, 35);
             this.txt_paterno.Name = "txt_paterno";
             this.txt_paterno.Size = new System.Drawing.Size(100, 20);
@@ -170,6 +194,7 @@
             // txt_nombres
             // 
             this.txt_nombres.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.txt_nombres.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clienteBindingSource, "nombres", true));
             this.txt_nombres.Location = new System.Drawing.Point(171, 35);
             this.txt_nombres.Name = "txt_nombres";
             this.txt_nombres.Size = new System.Drawing.Size(100, 20);
@@ -219,21 +244,114 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(74, 26);
             this.button1.TabIndex = 0;
-            this.button1.Text = "Guardar";
+            this.button1.Text = "Buscar";
             this.button1.UseVisualStyleBackColor = true;
+            // 
+            // ventaTableAdapter
+            // 
+            this.ventaTableAdapter.ClearBeforeFill = true;
+            // 
+            // datagrid_producto
+            // 
+            this.datagrid_producto.AllowUserToAddRows = false;
+            this.datagrid_producto.AllowUserToDeleteRows = false;
+            this.datagrid_producto.AutoGenerateColumns = false;
+            this.datagrid_producto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.datagrid_producto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idclienteDataGridViewTextBoxColumn,
+            this.nombresDataGridViewTextBoxColumn,
+            this.paternoDataGridViewTextBoxColumn,
+            this.maternoDataGridViewTextBoxColumn,
+            this.direccionDataGridViewTextBoxColumn,
+            this.fonoDataGridViewTextBoxColumn,
+            this.emailDataGridViewTextBoxColumn});
+            this.datagrid_producto.DataSource = this.clienteBindingSource;
+            this.datagrid_producto.Location = new System.Drawing.Point(45, 194);
+            this.datagrid_producto.Name = "datagrid_producto";
+            this.datagrid_producto.ReadOnly = true;
+            this.datagrid_producto.Size = new System.Drawing.Size(730, 134);
+            this.datagrid_producto.TabIndex = 2;
+            // 
+            // producto_diagram
+            // 
+            this.producto_diagram.DataSetName = "Producto_diagram";
+            this.producto_diagram.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // clienteBindingSource
+            // 
+            this.clienteBindingSource.DataMember = "cliente";
+            this.clienteBindingSource.DataSource = this.producto_diagram;
+            // 
+            // clienteTableAdapter
+            // 
+            this.clienteTableAdapter.ClearBeforeFill = true;
+            // 
+            // idclienteDataGridViewTextBoxColumn
+            // 
+            this.idclienteDataGridViewTextBoxColumn.DataPropertyName = "id_cliente";
+            this.idclienteDataGridViewTextBoxColumn.HeaderText = "id_cliente";
+            this.idclienteDataGridViewTextBoxColumn.Name = "idclienteDataGridViewTextBoxColumn";
+            this.idclienteDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nombresDataGridViewTextBoxColumn
+            // 
+            this.nombresDataGridViewTextBoxColumn.DataPropertyName = "nombres";
+            this.nombresDataGridViewTextBoxColumn.HeaderText = "nombres";
+            this.nombresDataGridViewTextBoxColumn.Name = "nombresDataGridViewTextBoxColumn";
+            this.nombresDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // paternoDataGridViewTextBoxColumn
+            // 
+            this.paternoDataGridViewTextBoxColumn.DataPropertyName = "paterno";
+            this.paternoDataGridViewTextBoxColumn.HeaderText = "paterno";
+            this.paternoDataGridViewTextBoxColumn.Name = "paternoDataGridViewTextBoxColumn";
+            this.paternoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // maternoDataGridViewTextBoxColumn
+            // 
+            this.maternoDataGridViewTextBoxColumn.DataPropertyName = "materno";
+            this.maternoDataGridViewTextBoxColumn.HeaderText = "materno";
+            this.maternoDataGridViewTextBoxColumn.Name = "maternoDataGridViewTextBoxColumn";
+            this.maternoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // direccionDataGridViewTextBoxColumn
+            // 
+            this.direccionDataGridViewTextBoxColumn.DataPropertyName = "direccion";
+            this.direccionDataGridViewTextBoxColumn.HeaderText = "direccion";
+            this.direccionDataGridViewTextBoxColumn.Name = "direccionDataGridViewTextBoxColumn";
+            this.direccionDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // fonoDataGridViewTextBoxColumn
+            // 
+            this.fonoDataGridViewTextBoxColumn.DataPropertyName = "fono";
+            this.fonoDataGridViewTextBoxColumn.HeaderText = "fono";
+            this.fonoDataGridViewTextBoxColumn.Name = "fonoDataGridViewTextBoxColumn";
+            this.fonoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // emailDataGridViewTextBoxColumn
+            // 
+            this.emailDataGridViewTextBoxColumn.DataPropertyName = "email";
+            this.emailDataGridViewTextBoxColumn.HeaderText = "email";
+            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
+            this.emailDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // Ventana_Cliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(825, 389);
+            this.Controls.Add(this.datagrid_producto);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupDatos);
             this.Name = "Ventana_Cliente";
             this.Text = "Ventana_Cliente";
+            this.Load += new System.EventHandler(this.Ventana_Cliente_Load);
             this.groupDatos.ResumeLayout(false);
             this.groupDatos.PerformLayout();
             this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.datagrid_producto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.producto_diagram)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -258,5 +376,17 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ComboBox combo_id;
+        private Producto_diagramTableAdapters.ventaTableAdapter ventaTableAdapter;
+        private System.Windows.Forms.DataGridView datagrid_producto;
+        private Producto_diagram producto_diagram;
+        private System.Windows.Forms.BindingSource clienteBindingSource;
+        private Producto_diagramTableAdapters.clienteTableAdapter clienteTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idclienteDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombresDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn paternoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn maternoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn direccionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fonoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
     }
 }

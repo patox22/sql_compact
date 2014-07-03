@@ -31,6 +31,18 @@ namespace ventasProducto.Presentacion
         public Ventana_Cliente()
         {
             InitializeComponent();
+            this.datagrid_producto.ReadOnly = true;
+        }
+
+        private void Ventana_Cliente_Load(object sender, EventArgs e)
+        {
+            // TODO: esta línea de código carga datos en la tabla 'producto_diagram.cliente' Puede moverla o quitarla según sea necesario.
+            this.clienteTableAdapter.Fill(this.producto_diagram.cliente);
+            // TODO: esta línea de código carga datos en la tabla 'producto_diagram.venta' Puede moverla o quitarla según sea necesario.
+            this.ventaTableAdapter.Fill(this.producto_diagram.venta);
+            // TODO: esta línea de código carga datos en la tabla 'producto_diagram.cliente' Puede moverla o quitarla según sea necesario.
+            this.clienteTableAdapter.Fill(this.producto_diagram.cliente);
+
         }
 
      

@@ -275,6 +275,8 @@ namespace ventasProducto {
                     this.tableventa.InitVars();
                 }
             }
+
+            // las relaciones de  las tablas
             this.relationFK_venta_detalle = this.Relations["FK_venta_detalle"];
             this.relationFK_producto_detalle = this.Relations["FK_producto_detalle"];
             this.relationFK_cliente_venta = this.Relations["FK_cliente_venta"];
